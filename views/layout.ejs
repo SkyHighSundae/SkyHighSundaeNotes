@@ -1,0 +1,24 @@
+<!-- views/layout.ejs -->
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title || 'Simple Notes App' %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="<%= theme %>">
+    <nav>
+        <% if (user) { %>
+            <a href="/notes"><%= __('Notes') %></a>
+            <a href="/settings"><%= __('Settings') %></a>
+            <a href="/logout"><%= __('Logout') %></a>
+        <% } else { %>
+            <a href="/login"><%= __('Login') %></a>
+            <a href="/register"><%= __('Register') %></a>
+        <% } %>
+    </nav>
+    <main>
+        <%- body %>
+    </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- views/notes.ejs -->
+<div class="container">
+    <aside>
+        <h2><%= __('Your Notes') %></h2>
+        <ul>
+            <% notes.forEach(function(note) { %>
+                <li><a href="/notes/view/<%= note %>"><%= note.replace('.txt', '') %></a></li>
+            <% }); %>
+        </ul>
+        <a href="/notes/new"><%= __('New Note') %></a>
+    </aside>
+    <section>
+        <h1><%= __('Welcome, ') %><%= user.username %></h1>
+        <p><%= __('Select a note from the sidebar to view it.') %></p>
+    </section>
+</div>

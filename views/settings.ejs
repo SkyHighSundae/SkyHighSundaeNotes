@@ -1,0 +1,55 @@
+<!-- views/settings.ejs -->
+<h1><%= __('Settings') %></h1>
+<form action="/settings" method="POST">
+    <!-- Language Selection -->
+    <label for="language"><%= __('Language') %></label>
+    <select name="language" id="language">
+        <option value="en-US" <%= currentLang === 'en-US' ? 'selected' : '' %>>English US</option>
+        <option value="en-UK" <%= currentLang === 'en-UK' ? 'selected' : '' %>>English UK</option>
+        <option value="de" <%= currentLang === 'de' ? 'selected' : '' %>>Deutsch</option>
+        <option value="fr" <%= currentLang === 'fr' ? 'selected' : '' %>>Français</option>
+        <option value="ru" <%= currentLang === 'ru' ? 'selected' : '' %>>Русский</option>
+    </select>
+
+    <!-- Theme Selection -->
+    <label for="theme"><%= __('Theme') %></label>
+    <select name="theme" id="theme">
+        <option value="light" <%= currentTheme === 'light' ? 'selected' : '' %>><%= __('Light Mode') %></option>
+        <option value="dark" <%= currentTheme === 'dark' ? 'selected' : '' %>><%= __('Dark Mode') %></option>
+    </select>
+
+    <button type="submit"><%= __('Save Settings') %></button>
+</form>
+
+<!-- Help Center Button -->
+<button id="helpCenterBtn"><%= __('Help Center') %></button>
+
+<!-- About Button -->
+<button id="aboutBtn"><%= __('About') %></button>
+
+<!-- Help Center Modal -->
+<div id="helpCenterModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2><%= __('Help Center') %></h2>
+        <h3><%= __('How to Create a New Note') %></h3>
+        <p><%= __('To create a new note, navigate to the Notes page and click on "New Note". Fill in the title and content, then click "Save".') %></p>
+        <h3><%= __('How to Change Language') %></h3>
+        <p><%= __('Go to the Settings page, select your preferred language from the dropdown menu, and click "Save Settings".') %></p>
+        <h3><%= __('How to Change Theme') %></h3>
+        <p><%= __('In the Settings page, select "Light Mode" or "Dark Mode" from the Theme dropdown, and click "Save Settings".') %></p>
+    </div>
+</div>
+
+<!-- About Modal -->
+<div id="aboutModal" class="modal">
+    <div class="modal-content">
+        <span class="close about-close">&times;</span>
+        <h2><%= __('About') %></h2>
+        <p><%= __('Simple Notes App') %></p>
+        <p><%= __('Coded by: ChatGPT o1-preview') %></p>
+    </div>
+</div>
+
+<!-- Modal Scripts -->
+<script src="/scripts.js"></script>

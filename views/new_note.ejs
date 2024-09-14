@@ -1,0 +1,9 @@
+<!-- views/new_note.ejs -->
+<h1><%= __('New Note') %></h1>
+<form action="/notes/new" method="POST">
+    <label for="title"><%= __('Note Title') %></label>
+    <input type="text" name="title" id="title" required>
+    <label for="content"><%= __('Note Content') %></label>
+    <textarea name="content" id="content" required></textarea>
+    <button type="submit"><%= __('Save') %></button>
+</form>

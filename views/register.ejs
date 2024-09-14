@@ -1,0 +1,12 @@
+<!-- views/register.ejs -->
+<h1><%= __('Register') %></h1>
+<form action="/register" method="POST">
+    <label for="username"><%= __('Username') %></label>
+    <input type="text" name="username" id="username" required>
+    <label for="password"><%= __('Password') %></label>
+    <input type="password" name="password" id="password" required>
+    <button type="submit"><%= __('Register') %></button>
+    <% if (message) { %>
+        <p><%= message %></p>
+    <% } %>
+</form>
